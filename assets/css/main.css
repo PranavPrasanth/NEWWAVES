@@ -6,49 +6,43 @@ body {
   color: #fff;
 }
 
-/* HERO */
+
 .hero {
   position: relative;
-  height: 85vh;
+  width: 100%;
+  height: 100vh; /* full screen height */
   overflow: hidden;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* important: keeps image proportional */
+  display: block;
 }
 
 .overlay {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.9), transparent);
+  background: rgba(0,0,0,0.4); /* optional dark overlay */
 }
 
 .hero-content {
   position: absolute;
-  bottom: 50px;
-  left: 40px;
-  max-width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 0 20px;
 }
 
-.hero h1 {
-  font-size: 50px;
-  margin: 0;
-}
 
-.tagline {
-  color: #e50914;
-  margin-top: 5px;
-}
 
-.hero-desc {
-  margin-top: 15px;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #ccc;
-}
+
 
 /* MOVIES */
 .movies {
