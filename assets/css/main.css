@@ -180,3 +180,19 @@ footer {
     width: 100%;
   }
 }
+
+
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh; /* smaller height on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+}
