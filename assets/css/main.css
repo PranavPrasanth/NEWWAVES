@@ -6,17 +6,60 @@ body {
   color: #fff;
 }
 
-
-/* RESET */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
-}
-
 /* ================= HERO ================= */
 
+.hero {
+  padding: 60px 20px;
+  background: #000;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* TEXT */
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 20px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* IMAGE */
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  transition: 0.4s;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
 
 /* ================= MOVIES ================= */
 
@@ -41,86 +84,8 @@ body {
   border-radius: 10px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= ABOUT ================= */
 
-@media (max-width: 768px) {
-
-  .hero {
-    height: 65vh;
-
-    /* 👇 VERY IMPORTANT for your wide banner */
-    background-position: 65% center;
-  }
-
-  .hero-desc {
-    font-size: 14px;
-  }
-
-  .movie-card {
-    min-width: 150px;
-  }
-
-  .movie-card img {
-    height: 200px;
-  }
-}
-/* ================= HERO WRAPPER ================= */
-
-.hero-wrapper {
-  padding: 40px 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* dark cinematic background */
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
-}
-
-/* ================= HERO CARD ================= */
-
-.hero-card {
-  width: 100%;
-  max-width: 1000px;
-
-  border-radius: 20px;
-  overflow: hidden;
-
-  /* cinematic shadow */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-
-  /* smooth hover feel */
-  transition: transform 0.4s ease;
-}
-
-.hero-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* subtle zoom on hover (desktop) */
-.hero-card:hover {
-  transform: scale(1.02);
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-  .hero-wrapper {
-    padding: 20px 10px;
-  }
-
-  .hero-card {
-    border-radius: 12px;
-  }
-}
-
-
-
-
-
-/* ABOUT */
 .about {
   padding: 60px 20px;
 }
@@ -136,69 +101,60 @@ body {
   border-radius: 10px;
 }
 
-.about-text h2 {
-  font-size: 32px;
-}
+/* ================= CONTACT ================= */
 
-.about-text h4 {
-  color: #e50914;
-}
-
-/* CONTACT */
 .contact {
   padding: 60px 20px;
   text-align: center;
 }
 
-.contact form {
-  max-width: 400px;
-  margin: auto;
-}
-
 .contact input,
 .contact textarea {
   width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: block;
   padding: 10px;
-  margin: 10px 0;
   background: #111;
   border: none;
   color: #fff;
 }
 
 .contact button {
-  padding: 10px;
+  padding: 10px 20px;
   background: #e50914;
   border: none;
   color: #fff;
   cursor: pointer;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer {
   text-align: center;
   padding: 20px;
   background: #111;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
 
-  .hero {
-    height: 60vh;
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .hero h1 {
-    font-size: 28px;
+  .hero-text h1 {
+    font-size: 32px;
   }
 
-  .hero-content {
-    left: 20px;
-    bottom: 30px;
+  .tagline {
+    font-size: 16px;
   }
 
   .hero-desc {
-    font-size: 12px;
-    max-width: 90%;
+    font-size: 14px;
   }
 
   .movie-card {
@@ -216,21 +172,5 @@ footer {
 
   .about-image img {
     width: 100%;
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .hero {
-    height: 60vh; /* smaller height on mobile */
-  }
-
-  .hero-content h1 {
-    font-size: 28px;
-  }
-
-  .hero-desc {
-    font-size: 14px;
   }
 }
