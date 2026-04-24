@@ -22,7 +22,7 @@ body {
   height: 100vh;
 
   /* 👇 USE YOUR IMAGE */
-  background: url("../../images/waves.jpg") center/cover no-repeat;
+  background: url("/waves.jpg") center/cover no-repeat;
 
   position: relative;
 }
