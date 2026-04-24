@@ -17,37 +17,6 @@ body {
 
 /* ================= HERO ================= */
 
-.hero {
-  width: 100%;
-  height: 100vh;
-
-  background: url("../../images/waves1.jpg") center/cover no-repeat;
-
-  position: relative;
-}
-
-/* ================= DESCRIPTION ================= */
-
-.hero-desc-section {
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-}
-
-.hero-desc {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #ccc;
-}
-
-.hero-desc strong {
-  color: #fff;
-}
 
 /* ================= MOVIES ================= */
 
@@ -95,7 +64,57 @@ body {
     height: 200px;
   }
 }
+/* ================= HERO WRAPPER ================= */
 
+.hero-wrapper {
+  padding: 40px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* dark cinematic background */
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+}
+
+/* ================= HERO CARD ================= */
+
+.hero-card {
+  width: 100%;
+  max-width: 1000px;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* cinematic shadow */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+
+  /* smooth hover feel */
+  transition: transform 0.4s ease;
+}
+
+.hero-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* subtle zoom on hover (desktop) */
+.hero-card:hover {
+  transform: scale(1.02);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .hero-wrapper {
+    padding: 20px 10px;
+  }
+
+  .hero-card {
+    border-radius: 12px;
+  }
+}
 
 
 
