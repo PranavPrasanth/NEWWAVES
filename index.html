@@ -3,15 +3,11 @@
 <head>
   <meta charset="UTF-8">
 
+  <!-- ✅ ONLY ONE viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>PWAVES ENTERTAINMENT</title>
 
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-
-
-  
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -25,136 +21,53 @@
   <div class="hero-content">
     <h1>PWAVES</h1>
     <p class="tagline">Film Production</p>
-
     <p class="hero-desc">
-      <strong>PWAVES</strong> is a dynamic film production company creating cinematic experiences,
-      music videos, and impactful advertisements.
+      Cinematic experiences, music videos, and impactful ads.
     </p>
   </div>
 </section>
 
-<!-- MOVIES -->
-<!--<section class="movies">
+<!-- NETFLIX ROW -->
+<section class="movies">
   <h2>Projects</h2>
 
-  <div class="movie-row">
-    <div class="movie-card">
+  <div class="netflix-row">
+
+    <div class="netflix-card" onclick="playVideo('https://www.youtube.com/embed/-mdn3oECRVM')">
       <img src="images/FB.jpeg">
-      <h3>WATCH NOW</h3>
+      <div class="card-overlay">FILM PROJECT ▶</div>
     </div>
 
-    <div class="movie-card">
-      <img src="images/DF.JPG">
-      <h3>WATCH NOW</h3>
+    <div class="netflix-card" onclick="playVideo('https://www.youtube.com/embed/S_YFGUkV2FE')">
+      <img src="images/DF.JPEG">
+      <div class="card-overlay">MUSIC VIDEO ▶</div>
     </div>
 
-    <div class="movie-card">
-      <img src="images/RMG.JPG">
-      <h3>WATCH NOW</h3>
+    <div class="netflix-card">
+      <img src="images/travel.jpg">
+      <div class="card-overlay">COMING SOON</div>
     </div>
 
-   <div class="movie-card">
-      <img src="images/time.jpg">
-      <h3>Coming Soon</h3>
-    </div>
--  </div>
+  </div>
 </section>
 
-
-<!-- MOVIES -->
-<div class="netflix-row">
-
-  <div class="netflix-card video-btn" data-video="https://www.youtube.com/embed/-mdn3oECRVM">
-    <img src="images/FB.jpeg">
-    <div class="overlay">
-      <h3>FILM PROJECT</h3>
-      <p>Watch Now ▶</p>
-    </div>
-  </div>
-
-  <div class="netflix-card video-btn" data-video="https://www.youtube.com/embed/S_YFGUkV2FE">
-    <img src="images/DF.JPEG">
-    <div class="overlay">
-      <h3>MUSIC VIDEO</h3>
-      <p>Watch Now ▶</p>
-    </div>
-  </div>
-
-  <div class="netflix-card" onclick="openPopup()">
-    <img src="images/travel.jpg">
-    <div class="overlay">
-      <h3>COMING SOON</h3>
-    </div>
-  </div>
-
-
-
-<!-- VIDEO PLAYER MODAL -->
+<!-- VIDEO MODAL -->
 <div id="videoModal" class="video-modal">
   <span class="close-btn" onclick="closeVideo()">×</span>
-  <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+  <iframe id="videoFrame" src="" allowfullscreen></iframe>
 </div>
 
-<script>
-  function playVideo(videoUrl) {
-    document.getElementById("videoFrame").src = videoUrl + "?autoplay=1";
-    document.getElementById("videoModal").style.display = "flex";
-  }
-
-  function closeVideo() {
-    document.getElementById("videoFrame").src = "";
-    document.getElementById("videoModal").style.display = "none";
-  }
-</script>
-
-
-
-
-
-
-  
 <!-- ABOUT -->
 <section class="about">
   <div class="about-container">
 
     <div class="about-image">
-      <img src="images/pv.jpg" alt="Pranav Prashanth">
+      <img src="images/pv.jpg">
     </div>
 
     <div class="about-text">
-
-      <h2 class="name">PRANAV PRASHANTH</h2>
-      <p class="role">AI Film Director</p>
-
-      <p class="intro">
-        From the heart of Kannur, Kerala, rises a new voice in cinema.
-      </p>
-
-      <p>
-        An Indian AI film director with a vision beyond the present, he doesn’t just tell stories — 
-        <span class="accent">he engineers them.</span>
-      </p>
-
-      <p>
-        Where imagination meets intelligence, Pranav brings machines and emotion onto the same screen, 
-        redefining what filmmaking can be. For him, AI isn’t a tool — 
-        <span class="accent">it’s a new language of cinema.</span>
-      </p>
-
-      <p class="subtle">
-        Influenced by visionary direction, his journey was shaped by a defining cinematic spark.
-      </p>
-
-      <div class="highlight-box">
-        <p>This is not just passion.</p>
-        <h3>THIS IS A MOVEMENT</h3>
-      </div>
-
-      <p class="closing">
-        Pranav Prashanth isn’t following the evolution of film — 
-        <strong>he’s creating it.</strong>
-      </p>
-
+      <h2>PRANAV PRASHANTH</h2>
+      <p>AI Film Director redefining cinema.</p>
     </div>
 
   </div>
@@ -172,10 +85,21 @@
   </form>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 PWAVES ENTERTAINMENT</p>
+  © 2026 PWAVES ENTERTAINMENT
 </footer>
+
+<script>
+function playVideo(url) {
+  document.getElementById("videoFrame").src = url + "?autoplay=1&rel=0";
+  document.getElementById("videoModal").style.display = "flex";
+}
+
+function closeVideo() {
+  document.getElementById("videoFrame").src = "";
+  document.getElementById("videoModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
