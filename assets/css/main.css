@@ -14,12 +14,11 @@ body {
 }
 
 /* ================= HERO ================= */
-
-.hero {
+/*.hero {
   position: relative;
   width: 100%;
   min-height: 100vh; /* flexible height */
-  overflow: hidden;
+/*  overflow: hidden;
 }
 
 .hero-img {
@@ -29,14 +28,14 @@ body {
 }
 
 /* overlay */
-.overlay {
+/*.overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(2,6,23,0.9));
 }
 
 /* content */
-.hero-content {
+/*.hero-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -49,7 +48,7 @@ body {
 }
 
 /* 🔥 responsive font scaling */
-.hero-content h1 {
+/*.hero-content h1 {
   font-size: clamp(32px, 6vw, 60px);
   margin-bottom: 10px;
 
@@ -69,6 +68,77 @@ body {
   line-height: 1.6;
   color: #e2e8f0;
 }
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media screen and (max-width: 768px) {
+
+  /* HERO SECTION */
+  .hero {
+    height: 70vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* NETFLIX ROW */
+  .netflix-row {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .netflix-card {
+    min-width: 220px;
+    height: 130px;
+  }
+
+  /* DISABLE BIG HOVER ZOOM ON MOBILE */
+  .netflix-card:hover {
+    transform: none;
+  }
+
+  /* VIDEO MODAL */
+  .video-modal iframe {
+    width: 95%;
+    height: 220px;
+  }
+
+  /* HEADER FIX */
+  #header {
+    position: relative;
+    width: 100%;
+  }
+
+  /* TEXT FIX */
+  h1, h2, h3 {
+    line-height: 1.2;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ================= MOVIES ================= */
 
