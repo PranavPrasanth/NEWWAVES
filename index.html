@@ -27,7 +27,7 @@
 </section>
 
 <!-- MOVIES -->
-<section class="movies">
+<!--<section class="movies">
   <h2>Projects</h2>
 
   <div class="movie-row">
@@ -50,9 +50,63 @@
       <img src="images/time.jpg">
       <h3>Coming Soon</h3>
     </div>
+-  </div>
+</section>
+
+
+<!-- MOVIES -->
+<section class="movies">
+  <h2>Projects</h2>
+
+  <div class="movie-row">
+
+    <div class="movie-card" onclick="playVideo('https://www.youtube.com/embed/-mdn3oECRVM?si=mMRk5IShbSNdqwrE')">
+      <img src="images/FB.jpeg" alt="Movie 1">
+      <h3>WATCH NOW</h3>
+    </div>
+
+    <div class="movie-card" onclick="playVideo('https://www.youtube.com/embed/S_YFGUkV2FE?si=lkQwZmhMF3LAxEHk"')">
+      <img src="images/DF.JPG" alt="Movie 2">
+      <h3>WATCH NOW</h3>
+    </div>
+
+    <div class="movie-card" onclick="playVideo('https://www.youtube.com/embed/YOUR_VIDEO_ID_3')">
+      <img src="images/RMG.JPG" alt="Movie 3">
+      <h3>WATCH NOW</h3>
+    </div>
+
+    <div class="movie-card" onclick="playVideo('https://www.youtube.com/embed/YOUR_VIDEO_ID_4')">
+      <img src="images/time.jpg" alt="Movie 4">
+      <h3>Coming Soon</h3>
+    </div>
+
   </div>
 </section>
 
+<!-- VIDEO PLAYER MODAL -->
+<div id="videoModal" class="video-modal">
+  <span class="close-btn" onclick="closeVideo()">×</span>
+  <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<script>
+  function playVideo(videoUrl) {
+    document.getElementById("videoFrame").src = videoUrl + "?autoplay=1";
+    document.getElementById("videoModal").style.display = "flex";
+  }
+
+  function closeVideo() {
+    document.getElementById("videoFrame").src = "";
+    document.getElementById("videoModal").style.display = "none";
+  }
+</script>
+
+
+
+
+
+
+  
 <!-- ABOUT -->
 <section class="about">
   <div class="about-container">
