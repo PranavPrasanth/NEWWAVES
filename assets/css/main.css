@@ -6,19 +6,16 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-
-  /* premium background */
+  font-family: Arial;
   background: radial-gradient(circle at top, #111827, #020617);
-  color: #fff;
+  color: white;
+  overflow-x: hidden;
 }
 
-/* ================= HERO ================= */
-/*.hero {
+/* HERO */
+.hero {
   position: relative;
-  width: 100%;
-  min-height: 100vh; /* flexible height */
-/*  overflow: hidden;
+  height: 100vh;
 }
 
 .hero-img {
@@ -27,279 +24,180 @@ body {
   object-fit: cover;
 }
 
-/* overlay */
-/*.overlay {
+.overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(2,6,23,0.9));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), #020617);
 }
 
-/* content */
-/*.hero-content {
+.hero-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 90%;
-  max-width: 700px;
-  text-align: center;
-  z-index: 2;
+  bottom: 40px;
+  left: 30px;
 }
 
-/* 🔥 responsive font scaling */
-/*.hero-content h1 {
-  font-size: clamp(32px, 6vw, 60px);
-  margin-bottom: 10px;
-
-  background: linear-gradient(90deg, #facc15, #ef4444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-content h1 {
+  font-size: 50px;
 }
 
 .tagline {
-  font-size: clamp(14px, 2.5vw, 22px);
   color: #cbd5f5;
-  margin-bottom: 10px;
 }
 
 .hero-desc {
-  font-size: clamp(13px, 2.5vw, 16px);
-  line-height: 1.6;
-  color: #e2e8f0;
+  font-size: 14px;
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
-@media screen and (max-width: 768px) {
+/* MOVIES */
+.movies {
+  padding: 30px;
+}
 
-  /* HERO SECTION */
+.netflix-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.netflix-row::-webkit-scrollbar {
+  display: none;
+}
+
+.netflix-card {
+  min-width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.netflix-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.netflix-card:hover {
+  transform: scale(1.1);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to top, black, transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.netflix-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* VIDEO MODAL */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal iframe {
+  width: 80%;
+  height: 60%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* ABOUT */
+.about {
+  padding: 50px;
+}
+
+.about-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.about img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+  padding: 40px;
+  text-align: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  background: #111827;
+  border: none;
+  color: white;
+}
+
+.contact button {
+  padding: 10px;
+  width: 100%;
+  background: red;
+  border: none;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  color: #aaa;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
   .hero {
     height: 70vh;
-    padding: 20px;
-    text-align: center;
   }
 
   .hero-content h1 {
     font-size: 28px;
   }
 
-  .hero-content p {
-    font-size: 14px;
-  }
-
-  .hero button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  /* NETFLIX ROW */
-  .netflix-row {
-    gap: 10px;
-    padding: 10px;
-  }
-
   .netflix-card {
-    min-width: 220px;
-    height: 130px;
+    min-width: 200px;
+    height: 120px;
   }
 
-  /* DISABLE BIG HOVER ZOOM ON MOBILE */
   .netflix-card:hover {
     transform: none;
   }
 
-  /* VIDEO MODAL */
   .video-modal iframe {
     width: 95%;
     height: 220px;
-  }
-
-  /* HEADER FIX */
-  #header {
-    position: relative;
-    width: 100%;
-  }
-
-  /* TEXT FIX */
-  h1, h2, h3 {
-    line-height: 1.2;
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ================= MOVIES ================= */
-
-.movies {
-  padding: 50px 15px;
-}
-
-.movies h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.movie-row {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.movie-row::-webkit-scrollbar {
-  display: none;
-}
-
-.movie-card {
-  min-width: 160px;
-  flex-shrink: 0;
-}
-
-.movie-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.movie-card h3 {
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-/* ================= ABOUT ================= */
-
-.about {
-  padding: 50px 15px;
-}
-
-.about-container {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* image */
-.about-image img {
-  width: 280px;
-  max-width: 100%;
-  border-radius: 12px;
-}
-
-/* text */
-.about-text {
-  flex: 1;
-}
-
-.name {
-  font-size: clamp(22px, 4vw, 34px);
-  background: linear-gradient(90deg, #facc15, #ef4444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.role {
-  color: #94a3b8;
-  margin-bottom: 10px;
-}
-
-.about-text p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #cbd5f5;
-  margin-bottom: 10px;
-}
-
-.accent {
-  color: #f43f5e;
-}
-
-.subtle {
-  font-size: 12px;
-  color: #64748b;
-}
-
-/* highlight */
-.highlight-box {
-  margin: 20px 0;
-  padding: 15px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #1e293b, #020617);
-  text-align: center;
-}
-
-/* ================= CONTACT ================= */
-
-.contact {
-  padding: 50px 15px;
-  text-align: center;
-}
-
-.contact form {
-  max-width: 400px;
-  margin: auto;
-}
-
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  background: #111827;
-  border: none;
-  color: #fff;
-  border-radius: 6px;
-}
-
-.contact button {
-  width: 100%;
-  padding: 10px;
-  background: linear-gradient(90deg, #ef4444, #facc15);
-  border: none;
-  color: #000;
-  border-radius: 6px;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-  text-align: center;
-  padding: 15px;
-  font-size: 13px;
-  color: #94a3b8;
-}
-
-/* ================= MOBILE FIX ================= */
-
-@media (max-width: 768px) {
-
-  .hero {
-    min-height: 70vh;
-  }
-
-  /* IMPORTANT: fix content positioning */
-  .hero-content {
-    top: auto;
-    bottom: 30px;
-    transform: translateX(-50%);
   }
 
   .about-container {
     flex-direction: column;
     text-align: center;
   }
+
 }
