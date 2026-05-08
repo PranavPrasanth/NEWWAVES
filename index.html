@@ -88,6 +88,29 @@
 </section>
 
 
+  <!-- Video Popup -->
+<div id="videoPopup" class="video-popup">
+  <span class="close-btn" onclick="closeVideo()">×</span>
+
+  <iframe
+    id="videoFrame"
+    src=""
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<script>
+function playVideo(videoUrl) {
+  document.getElementById("videoPopup").style.display = "flex";
+  document.getElementById("videoFrame").src = videoUrl;
+}
+
+function closeVideo() {
+  document.getElementById("videoPopup").style.display = "none";
+  document.getElementById("videoFrame").src = "";
+}
+</script>
 
 
 
