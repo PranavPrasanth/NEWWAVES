@@ -324,11 +324,9 @@ footer {
 /* =========================================
    PWAVES TOP ENROLLMENT BAR
    ========================================= */
-
-
-/* ==========================================
-   PWAVES ENROLLMENT BAR
-   ========================================== */
+/* =====================================================
+   PWAVES ENTERTAINMENT - TOP ENROLLMENT BAR
+   ===================================================== */
 
 .enroll-bar {
     position: fixed;
@@ -336,54 +334,48 @@ footer {
     left: 0;
 
     width: 100%;
-    height: 62px;
+    height: 64px;
 
     z-index: 99999;
 
-    display: grid;
-
-    grid-template-columns: 30px 1fr auto;
-
+    display: flex;
     align-items: center;
+    justify-content: center;
 
-    column-gap: 18px;
-
-    padding: 0 30px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #050505,
-            #160000,
-            #050505
-        );
+    background: linear-gradient(
+        90deg,
+        #050505 0%,
+        #120000 50%,
+        #050505 100%
+    );
 
     border-bottom: 1px solid rgba(229, 9, 20, 0.55);
 
     box-shadow:
-        0 4px 25px rgba(229, 9, 20, 0.15);
+        0 4px 25px rgba(229, 9, 20, 0.18);
 
     box-sizing: border-box;
 }
 
 
-/* ==========================================
+/* =====================================================
    RED ATTENTION DOT
-   ========================================== */
+   ===================================================== */
 
 .enroll-indicator {
-    display: flex;
+    width: 8px;
+    height: 8px;
 
-    align-items: center;
-    justify-content: center;
+    margin-right: 12px;
+
+    flex-shrink: 0;
 }
 
-
 .enroll-indicator span {
-    width: 9px;
-    height: 9px;
-
     display: block;
+
+    width: 8px;
+    height: 8px;
 
     background: #ff1e2d;
 
@@ -391,11 +383,10 @@ footer {
 
     box-shadow:
         0 0 6px #ff1e2d,
-        0 0 18px rgba(255, 30, 45, 0.8);
+        0 0 15px rgba(255, 30, 45, 0.8);
 
     animation: enrollPulse 1.4s infinite;
 }
-
 
 @keyframes enrollPulse {
 
@@ -405,24 +396,23 @@ footer {
     }
 
     50% {
-        transform: scale(1.5);
-        opacity: 0.5;
+        transform: scale(1.45);
+        opacity: 0.55;
     }
 
     100% {
         transform: scale(1);
         opacity: 1;
     }
-
 }
 
 
-/* ==========================================
+/* =====================================================
    MAKE YOUR AI FILMS
-   ========================================== */
+   ===================================================== */
 
 .enroll-message {
-    justify-self: center;
+    position: relative;
 
     color: #ffffff;
 
@@ -433,33 +423,63 @@ footer {
 
     white-space: nowrap;
 
+    padding-bottom: 5px;
+
     text-shadow:
         0 0 8px rgba(255,255,255,0.25);
+
+    flex-shrink: 0;
 }
 
 
-/* ==========================================
-   ENROLL NOW
-   ========================================== */
+/* Red cinematic underline */
+
+.enroll-message::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 55%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #e50914,
+        #ff3344,
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(229, 9, 20, 0.8);
+}
+
+
+/* =====================================================
+   ENROLL NOW BUTTON
+   ===================================================== */
 
 .enroll-button {
-    justify-self: end;
-
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
     justify-content: center;
 
-    padding: 10px 24px;
+    margin-left: 40px;
+
+    padding: 10px 25px;
+
+    min-width: 120px;
 
     color: #ffffff;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e50914,
-            #9b0008
-        );
+    background: linear-gradient(
+        135deg,
+        #e50914,
+        #990008
+    );
 
     border: 1px solid #ff3344;
 
@@ -475,89 +495,99 @@ footer {
     white-space: nowrap;
 
     box-shadow:
-        0 0 12px rgba(229, 9, 20, 0.5);
+        0 0 12px rgba(229, 9, 20, 0.5),
+        0 0 25px rgba(229, 9, 20, 0.15);
 
-    transition: 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+    flex-shrink: 0;
 }
 
+
+/* Button hover */
 
 .enroll-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff1e2d,
-            #e50914
-        );
+    background: linear-gradient(
+        135deg,
+        #ff1e2d,
+        #e50914
+    );
 
     box-shadow:
-        0 0 20px rgba(255, 30, 45, 0.8);
+        0 0 18px rgba(255, 30, 45, 0.85),
+        0 0 40px rgba(229, 9, 20, 0.4);
 }
 
 
-/* ==========================================
-   BODY
-   ========================================== */
+/* =====================================================
+   BODY SPACE FOR FIXED BAR
+   ===================================================== */
 
 body {
-    padding-top: 62px;
+    padding-top: 64px;
 }
 
 
-/* ==========================================
-   MOBILE
-   ========================================== */
+/* =====================================================
+   MOBILE - 600px
+   ===================================================== */
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
     .enroll-bar {
-
         height: 56px;
 
-        grid-template-columns:
-            14px
-            1fr
-            auto;
-
-        column-gap: 8px;
-
         padding: 0 10px;
+
+        justify-content: center;
+    }
+
+
+    .enroll-indicator {
+        width: 6px;
+        height: 6px;
+
+        margin-right: 7px;
     }
 
 
     .enroll-indicator span {
-
         width: 6px;
         height: 6px;
     }
 
 
     .enroll-message {
-
-        justify-self: start;
-
         font-size: 10px;
 
         letter-spacing: 0.7px;
 
-        overflow: hidden;
+        padding-bottom: 4px;
+    }
 
-        text-overflow: ellipsis;
 
-        white-space: nowrap;
+    .enroll-message::after {
+        height: 1.5px;
     }
 
 
     .enroll-button {
+        margin-left: 15px;
 
-        padding: 8px 12px;
+        min-width: auto;
+
+        padding: 8px 13px;
 
         font-size: 9px;
 
         letter-spacing: 0.6px;
 
-        border-radius: 18px;
+        border-radius: 20px;
     }
 
 
@@ -567,36 +597,33 @@ body {
 }
 
 
-/* ==========================================
-   VERY SMALL PHONES
-   ========================================== */
+/* =====================================================
+   SMALL PHONES - 400px
+   ===================================================== */
 
-@media (max-width: 360px) {
+@media screen and (max-width: 400px) {
 
     .enroll-bar {
-
-        grid-template-columns:
-            10px
-            1fr
-            auto;
-
-        column-gap: 6px;
-
         padding: 0 7px;
     }
 
 
-    .enroll-message {
+    .enroll-indicator {
+        margin-right: 5px;
+    }
 
-        font-size: 8px;
+
+    .enroll-message {
+        font-size: 8.5px;
 
         letter-spacing: 0.4px;
     }
 
 
     .enroll-button {
+        margin-left: 9px;
 
-        padding: 7px 9px;
+        padding: 7px 10px;
 
         font-size: 8px;
 
