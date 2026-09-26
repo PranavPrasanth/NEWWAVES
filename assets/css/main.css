@@ -326,38 +326,104 @@ footer {
    ========================================= */
 
 
-/* =========================================
-   TOP ENROLLMENT BAR
-   ========================================= */
+/* ==========================================
+   PWAVES ENROLLMENT BAR
+   ========================================== */
 
 .enroll-bar {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
-    height: 64px;
+    height: 62px;
 
     z-index: 99999;
 
-    display: flex;
+    display: grid;
+
+    grid-template-columns: 30px 1fr auto;
+
     align-items: center;
-    justify-content: center;
 
-    background: #080808;
+    column-gap: 18px;
 
-    border-bottom: 1px solid rgba(229, 9, 20, 0.7);
+    padding: 0 30px;
 
-    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.18);
+    background:
+        linear-gradient(
+            90deg,
+            #050505,
+            #160000,
+            #050505
+        );
+
+    border-bottom: 1px solid rgba(229, 9, 20, 0.55);
+
+    box-shadow:
+        0 4px 25px rgba(229, 9, 20, 0.15);
 
     box-sizing: border-box;
 }
 
 
-/* =========================================
-   MAKE YOUR AI FILMS
-   ========================================= */
+/* ==========================================
+   RED ATTENTION DOT
+   ========================================== */
 
-.enroll-text {
+.enroll-indicator {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.enroll-indicator span {
+    width: 9px;
+    height: 9px;
+
+    display: block;
+
+    background: #ff1e2d;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 6px #ff1e2d,
+        0 0 18px rgba(255, 30, 45, 0.8);
+
+    animation: enrollPulse 1.4s infinite;
+}
+
+
+@keyframes enrollPulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* ==========================================
+   MAKE YOUR AI FILMS
+   ========================================== */
+
+.enroll-message {
+    justify-self: center;
+
     color: #ffffff;
 
     font-size: 17px;
@@ -367,162 +433,173 @@ footer {
 
     white-space: nowrap;
 
-    position: relative;
-
-    padding-bottom: 5px;
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.25);
 }
 
 
-/* Red line */
-
-.enroll-text::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 45%;
-    height: 2px;
-
-    background: #e50914;
-
-    box-shadow: 0 0 8px rgba(229, 9, 20, 0.8);
-}
-
-
-/* =========================================
+/* ==========================================
    ENROLL NOW
-   ========================================= */
+   ========================================== */
 
-.enroll-btn {
-    display: inline-flex;
+.enroll-button {
+    justify-self: end;
+
+    display: flex;
 
     align-items: center;
     justify-content: center;
 
-    margin-left: 35px;
-
-    padding: 11px 24px;
-
-    background: #e50914;
+    padding: 10px 24px;
 
     color: #ffffff;
 
-    border: none;
+    background:
+        linear-gradient(
+            135deg,
+            #e50914,
+            #9b0008
+        );
 
-    border-radius: 6px;
+    border: 1px solid #ff3344;
+
+    border-radius: 25px;
 
     text-decoration: none;
 
     font-size: 13px;
     font-weight: 800;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
 
     white-space: nowrap;
 
     box-shadow:
-        0 0 10px rgba(229, 9, 20, 0.5);
+        0 0 12px rgba(229, 9, 20, 0.5);
 
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 
-.enroll-btn:hover {
-    background: #ff1e2d;
+.enroll-button:hover {
+    transform: scale(1.05);
 
-    transform: translateY(-2px);
+    background:
+        linear-gradient(
+            135deg,
+            #ff1e2d,
+            #e50914
+        );
 
     box-shadow:
-        0 0 18px rgba(255, 30, 45, 0.8);
+        0 0 20px rgba(255, 30, 45, 0.8);
 }
 
 
-/* =========================================
+/* ==========================================
    BODY
-   ========================================= */
+   ========================================== */
 
 body {
-    padding-top: 64px;
+    padding-top: 62px;
 }
 
 
-/* =========================================
+/* ==========================================
    MOBILE
-   ========================================= */
+   ========================================== */
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
 
     .enroll-bar {
-        height: 58px;
 
-        padding: 0 12px;
+        height: 56px;
 
-        justify-content: space-between;
+        grid-template-columns:
+            14px
+            1fr
+            auto;
+
+        column-gap: 8px;
+
+        padding: 0 10px;
     }
 
 
-    .enroll-text {
-        font-size: 11px;
+    .enroll-indicator span {
 
-        letter-spacing: 0.8px;
-
-        padding-bottom: 4px;
-
-        flex: 1;
-
-        min-width: 0;
+        width: 6px;
+        height: 6px;
     }
 
 
-    .enroll-btn {
-        margin-left: 12px;
+    .enroll-message {
 
-        padding: 9px 13px;
+        justify-self: start;
 
         font-size: 10px;
 
         letter-spacing: 0.7px;
 
-        flex-shrink: 0;
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+
+    .enroll-button {
+
+        padding: 8px 12px;
+
+        font-size: 9px;
+
+        letter-spacing: 0.6px;
+
+        border-radius: 18px;
     }
 
 
     body {
-        padding-top: 58px;
+        padding-top: 56px;
     }
 }
 
 
-/* =========================================
-   SMALL PHONES
-   ========================================= */
+/* ==========================================
+   VERY SMALL PHONES
+   ========================================== */
 
-@media screen and (max-width: 380px) {
+@media (max-width: 360px) {
 
     .enroll-bar {
-        padding: 0 8px;
+
+        grid-template-columns:
+            10px
+            1fr
+            auto;
+
+        column-gap: 6px;
+
+        padding: 0 7px;
     }
 
 
-    .enroll-text {
-        font-size: 9px;
+    .enroll-message {
+
+        font-size: 8px;
 
         letter-spacing: 0.4px;
     }
 
 
-    .enroll-btn {
-        margin-left: 8px;
+    .enroll-button {
 
-        padding: 8px 10px;
+        padding: 7px 9px;
 
-        font-size: 9px;
+        font-size: 8px;
 
-        letter-spacing: 0.4px;
+        letter-spacing: 0.3px;
     }
 }
-
-
