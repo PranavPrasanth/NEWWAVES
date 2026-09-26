@@ -320,3 +320,279 @@ footer {
 }
 
 
+
+/* =========================================
+   PWAVES TOP ENROLLMENT BAR
+   ========================================= */
+
+.enroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 62px;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    90deg,
+    #050505 0%,
+    #180000 50%,
+    #050505 100%
+  );
+
+  border-bottom: 1px solid rgba(229, 9, 20, 0.5);
+
+  box-shadow:
+    0 4px 25px rgba(229, 9, 20, 0.18);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAKE YOUR AI FILMS
+   ========================================= */
+
+.enroll-text {
+  position: relative;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+
+  padding-bottom: 5px;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.25);
+}
+
+
+/* Red underline */
+
+.enroll-text::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 50%;
+  height: 2px;
+
+  background: #e50914;
+
+  box-shadow:
+    0 0 8px rgba(229,9,20,0.8);
+}
+
+
+/* =========================================
+   ENROLL BUTTON
+   ========================================= */
+
+.enroll-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-left: 45px;
+
+  padding: 10px 22px;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #e50914,
+    #990008
+  );
+
+  border: 1px solid #ff3344;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 0 12px rgba(229,9,20,0.55);
+
+  transition: 0.3s ease;
+}
+
+
+/* =========================================
+   ATTENTION DOT
+   ========================================= */
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 5px #ffffff,
+    0 0 12px #ff3344;
+
+  animation: livePulse 1.2s infinite;
+}
+
+
+@keyframes livePulse {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.7);
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================
+   BUTTON HOVER
+   ========================================= */
+
+.enroll-btn:hover {
+  transform: scale(1.06);
+
+  background: linear-gradient(
+    135deg,
+    #ff1e2d,
+    #e50914
+  );
+
+  box-shadow:
+    0 0 18px rgba(255,30,45,0.8),
+    0 0 35px rgba(229,9,20,0.4);
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+  padding-top: 62px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .enroll-bar {
+    height: 54px;
+
+    padding: 0 10px;
+  }
+
+
+  .enroll-text {
+    font-size: 10px;
+
+    letter-spacing: 0.8px;
+
+    padding-bottom: 4px;
+
+    flex-shrink: 1;
+  }
+
+
+  .enroll-btn {
+    margin-left: 18px;
+
+    padding: 8px 12px;
+
+    gap: 5px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.6px;
+
+    flex-shrink: 0;
+  }
+
+
+  .live-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+
+  body {
+    padding-top: 54px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+  .enroll-bar {
+    padding: 0 7px;
+  }
+
+
+  .enroll-text {
+    font-size: 8px;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  .enroll-btn {
+    margin-left: 10px;
+
+    padding: 7px 9px;
+
+    font-size: 8px;
+  }
+
+}
+
+
+
+
+
