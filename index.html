@@ -132,31 +132,95 @@
 </section>
 
 
-  <!-- Video Popup -->
-<div id="videoPopup" class="video-popup">
-  <span class="close-btn" onclick="closeVideo()">×</span>
 
-  <iframe
-    id="videoFrame"
-    src=""
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
+
+
+  
+<!-- VIDEO POPUP -->
+<div id="videoPopup" class="video-popup">
+
+  <div class="video-box">
+
+    <!-- CLOSE BUTTON -->
+    <button
+      type="button"
+      class="close-btn"
+      onclick="closeVideo()"
+      aria-label="Close video">
+      &times;
+    </button>
+
+    <!-- YOUTUBE VIDEO -->
+    <iframe
+      id="videoFrame"
+      src=""
+      title="PWAVES Movie"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+
+  </div>
 </div>
 
 <script>
 function playVideo(videoUrl) {
-  document.getElementById("videoPopup").style.display = "flex";
-  document.getElementById("videoFrame").src = videoUrl;
+  const popup = document.getElementById("videoPopup");
+  const frame = document.getElementById("videoFrame");
+
+  // Support YouTube URLs with or without existing parameters
+  const separator = videoUrl.includes("?") ? "&" : "?";
+
+  frame.src = videoUrl + separator + "autoplay=1";
+  popup.style.display = "flex";
 }
 
 function closeVideo() {
   document.getElementById("videoPopup").style.display = "none";
   document.getElementById("videoFrame").src = "";
 }
+
+// Close popup when clicking outside the video
+document.getElementById("videoPopup").addEventListener("click", function(event) {
+  if (event.target === this) {
+    closeVideo();
+  }
+});
+
+// Close popup using Escape key
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeVideo();
+  }
+});
 </script>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   
 <!-- ABOUT -->
